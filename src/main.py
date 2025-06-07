@@ -1,7 +1,6 @@
-from textnode import TextNode, TextType
+from common import *
 
 def main():
-    testnode = TextNode("This is text", TextType.LINK, "https://www.boot.dev")
-    print(testnode)
+    pass
 
 main()
