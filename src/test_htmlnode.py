@@ -8,14 +8,11 @@ class TestHTMLNode(unittest.TestCase):
     def test_props_to_html(self):
         node = HTMLNode(None, None, None, {"href": "https://www.google.com", "target": "_blank",})
         node2 = HTMLNode(None, None, None, {"href": "https://www.boot.dev", "target": "_blank",})
-        print(node)
-        print(node2.props_to_html())
         self.assertEqual(node.props_to_html()[:1], " ")
     
     def test_leaf_to_html(self):
         node = LeafNode("p", "Yeehaw")
         node2 = LeafNode("a", "Click this link", {"href": "https://www.boot.dev"})
-        print(node2.to_html())
         self.assertEqual(node.to_html(), "<p>Yeehaw</p>")
     
     def test_to_html_with_children(self):
