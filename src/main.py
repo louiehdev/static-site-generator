@@ -64,7 +64,7 @@ def generate_static_site(from_path, template_path, dest_path, basepath):
     generate_page_recursive(from_path, template_path, dest_path, basepath)
 
 def main():
-    basepath = sys.argv[1:]
+    basepath = sys.argv[1]
     if not basepath:
         basepath = "/"
 
