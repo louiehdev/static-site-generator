@@ -38,6 +38,7 @@ def generate_page(from_path, template_path, dest_path, basepath):
     page_content = markdown_to_htmlnode(content).to_html()
     full_page = template.replace("{{ Content }}", page_content).replace("{{ Title }}", extract_title(content))
     full_page = full_page.replace('href="/', f'href="{basepath}').replace('src="/', f'src="{basepath}')
+    full_page = full_page.replace('href=/', f'href={basepath}').replace('src=/', f'src={basepath}')
     
     with open(dest_path, 'w') as f:
         f.write(full_page)
